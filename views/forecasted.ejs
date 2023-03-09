@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+  
+    <div class="forecastedData">
+        <h1 class="cityName heading">Weather in <%- cityName %> || Live Weather</h1>
+        <img src="<%- imgDesc %>" alt="Error loading image" class="weatherimg">
+        <p class="temp">The temperature in <%- cityName %> is <%- tempCel %>°C</p>
+        <p class="temp"> and the weather condition is <%- weatherDesc %>.</p>
+    </div>
+    <div class="moreData">
+        <p class="text-big heading">Some more details about weather in <%- cityName %>
+        </p>
+        <ul class="other-details">
+            <li class="more-details"><span class="color">City</span>: <%- cityName %></li>
+            <li class="more-details"><span class="color">Region</span>: <%- region %></li>
+            <li class="more-details"><span class="color">Country</span>: <%- country %></li>
+            <li class="more-details"><span class="color">Time Zone</span>: <%- timeZone %></li>
+            <li class="more-details"><span class="color">Wind Speed</span>: <%- windSpeed %> Km/h</li>
+            <li class="more-details"><span class="color">Wind Direction</span>: <%- windDir %></li>
+            <li class="more-details"><span class="color">Humidity</span>: <%- humidity %></li>
+        </ul>
+    </div>
+
+    <%- include("partials/footer.ejs") %>
