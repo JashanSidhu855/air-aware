@@ -18,7 +18,9 @@ var forecastedData = {
     humidity: 0,
     region: "",
     country: "",
-    timeZone: ""
+    timeZone: "",
+    lat: 0,
+    lon: 0
 }
 // For home page popular cities
 var popularCities = {
@@ -101,6 +103,8 @@ app.post("/", function (req, res) {
         forecastedData.region = weatherData.location.region;
         forecastedData.country = weatherData.location.country;
         forecastedData.timeZone = weatherData.location.tz_id;
+        forecastedData.lat = weatherData.location.lat;
+        forecastedData.lon = weatherData.location.lon;
 
         res.redirect("/forecasted");
       } else {
@@ -122,6 +126,8 @@ app.get("/forecasted", function (req, res) {
     region: forecastedData.region,
     country: forecastedData.country,
     timeZone: forecastedData.timeZone,
+    lat: forecastedData.lat,
+    lon: forecastedData.lon
     
   });
 });

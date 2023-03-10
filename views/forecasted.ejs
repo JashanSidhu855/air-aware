@@ -1,23 +1,57 @@
 <%- include("partials/header.ejs") %>
-  
-    <div class="forecastedData">
-        <h1 class="cityName heading">Weather in <%- cityName %> || Live Weather</h1>
-        <img src="<%- imgDesc %>" alt="Error loading image" class="weatherimg">
-        <p class="temp">The temperature in <%- cityName %> is <%- tempCel %>°C</p>
-        <p class="temp"> and the weather condition is <%- weatherDesc %>.</p>
-    </div>
-    <div class="moreData">
-        <p class="text-big heading">Some more details about weather in <%- cityName %>
-        </p>
-        <ul class="other-details">
-            <li class="more-details"><span class="color">City</span>: <%- cityName %></li>
-            <li class="more-details"><span class="color">Region</span>: <%- region %></li>
-            <li class="more-details"><span class="color">Country</span>: <%- country %></li>
-            <li class="more-details"><span class="color">Time Zone</span>: <%- timeZone %></li>
-            <li class="more-details"><span class="color">Wind Speed</span>: <%- windSpeed %> Km/h</li>
-            <li class="more-details"><span class="color">Wind Direction</span>: <%- windDir %></li>
-            <li class="more-details"><span class="color">Humidity</span>: <%- humidity %></li>
-        </ul>
-    </div>
+
+    <!-- Main content -->
+    <main class="container my-5">
+        <h1 class="text-center mb-4">Weather Forecast in <%- cityName %></h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h2 class="card-title mb-4"><%- cityName %></h2>
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <img src="https://www.weatherbit.io/static/img/icons/r01d.png" alt="Weather Icon"
+                                    class="img-fluid">
+                            </div>
+                            <div class="col-6">
+                                <h3 class="mb-0"><%- tempCel %>&deg;C</h3>
+                                <small class="text-muted"><%- weatherDesc %></small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="mb-0"><strong>Humidity:</strong> <%- humidity %>%</p>
+                                <p class="mb-0"><strong>Wind Speed:</strong> <%- windSpeed %>Km/h</p>
+                            </div>
+                            <div class="col-6">
+                                <p class="mb-0"><strong>Wind Direction:</strong> <%- windDir %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-4 col-md-6 col-sm-8">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h2 class="card-title mb-4">Additional Details</h2>
+                        <div class="row">
+                            <div class="col-6">
+                                <p class="mb-0"><strong>Timezone:</strong> <%- timeZone %></p>
+                                <p class="mb-0"><strong>Region:</strong> <%- region %></p>
+                            </div>
+                            <div class="col-6">
+                                <p class="mb-0"><strong>Country:</strong> <%- country %></p>
+                                <p class="mb-0"><strong>Latitude:</strong> <%- lat %></p>
+                                <p class="mb-0"><strong>Longitude:</strong> <%- lon %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <%- include("partials/footer.ejs") %>
